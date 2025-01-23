@@ -1,17 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
 import NavItems from './NavItems'
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
-import { MenuIcon } from 'lucide-react';
+import { getKindeServerSession, LoginLink, LogoutLink, RegisterLink, isLoading } from '@kinde-oss/kinde-auth-nextjs/server';
 
 const Navbar = async () => {
-    
     const {getUser} = getKindeServerSession();
     const user = await getUser();
-
-    const handleMobileNav = () => {
-
-    }
+    
   return (
     <div className='w-full bg-white/60 sticky top-0 shadow-md z-50 backdrop-blur-xl'>
         <nav className='max-w-7xl mx-auto px-4 py-4 xl:px-0 flex items-center justify-between'>
@@ -20,6 +15,8 @@ const Navbar = async () => {
             </div>
             <div className='flex items-center gap-4'>
                 <NavItems/>
+                {
+                    !isLoading &&
                 
                 <div className='space-x-2'>
                     {
@@ -48,6 +45,7 @@ const Navbar = async () => {
                     </>
                     }
                 </div> 
+                }
             </div>
         </nav>
     </div>
