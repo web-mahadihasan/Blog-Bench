@@ -1,5 +1,5 @@
 
-const loading = () => {
+const Spinner = () => {
   return (
     <div className="w-full h-screen flex items-center justify-center">
       <span className="loading loading-infinity loading-lg"></span>
@@ -7,4 +7,4 @@ const loading = () => {
   )
 }
 
-export default loading
+export default Spinner
