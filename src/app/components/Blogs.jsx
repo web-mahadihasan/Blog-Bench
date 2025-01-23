@@ -18,7 +18,7 @@ const Blogs =  () => {
         getBlogs()
     }, [])
 
-    // Pagination calculations
+
   const totalPages = Math.ceil(blogs?.length / pageSize);
 
   const paginatedData = blogs?.slice(
