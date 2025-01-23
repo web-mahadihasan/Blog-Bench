@@ -10,7 +10,7 @@ const Profile = async () => {
 
 
   if (!user) {
-    redirect('/api/auth/login')
+    redirect('/api/auth/login?post_login_redirect_url=/profile')
   }
 
   return (
